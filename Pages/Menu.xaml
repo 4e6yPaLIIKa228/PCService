@@ -1,0 +1,21 @@
+﻿<Window x:Class="PCService.Pages.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCService.Pages"
+        mc:Ignorable="d"
+               Title="Menu" Height="250" Width="300"  AllowsTransparency="True"  WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle Fill="#FFF92626" HorizontalAlignment="Left" Height="55" Margin="0,195,0,0" Stroke="Black" VerticalAlignment="Top" Width="300"/>
+        <Rectangle Fill="#FF816F6F" HorizontalAlignment="Left" Height="195" Stroke="Black" VerticalAlignment="Top" Width="300"/>
+        <Border BorderBrush="Wheat" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="10,200,0,0" VerticalAlignment="Top" Width="40"/>
+        <Image Source="/PCService;component/img/logout.png" Margin="12,198,252,8"></Image>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="250,200,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button x:Name="btnremont" Margin="10,100,160,110" Content="Ремонт ПК" Width="130" Height="40" BorderBrush="#FFFD0404" Click="btnremont_Click"/>
+        <Button Margin="160,100,10,110" Content="Продажа ПК" Width="130" Height="40" BorderBrush="#FFE80505"/>
+        <TextBlock x:Name="name" HorizontalAlignment="Left" Margin="0,35,0,0" TextWrapping="Wrap" Text="Выберите категорию" VerticalAlignment="Top" FontSize="25" Foreground="White" Width="300" TextAlignment="Center"/>
+        <Border BorderBrush="Wheat" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="60,200,0,0" VerticalAlignment="Top" Width="40"/>
+        <Image Source="/PCService;component/img/profile.png" Margin="58,198,197,8"/>
+    </Grid>
+</Window>
