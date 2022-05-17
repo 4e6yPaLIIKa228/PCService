@@ -10,14 +10,17 @@
     <Grid>
         <Rectangle Fill="#FFF92626" HorizontalAlignment="Left" Height="84" Margin="0,366,0,0" Stroke="Black" VerticalAlignment="Top" Width="800"/>
         <Rectangle Fill="#FF6E6464" HorizontalAlignment="Left" Height="366" Stroke="Black" VerticalAlignment="Top" Width="800"/>
-        <ListBox Margin="67,114,126,102" Name="CategoryList">
-            <ListBox.Resources>
-                <DataTemplate x:Key="DataTemplateItem">
-                    <Grid Height="Auto" Width="Auto">
-                        <TextBlock x:Name="Name" Text="{Binding Name}" />
-                    </Grid>
-                </DataTemplate>
-            </ListBox.Resources>
-        </ListBox>
+        <DataGrid x:Name="service" Grid.Column="0" RowHeight="30" Grid.RowSpan="1"  Margin="5,5,0,89" ColumnWidth="*" CanUserAddRows="False"  AutoGenerateColumns="False" MinColumnWidth="25" RowHeaderWidth="0"  SelectionUnit="FullRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" IsReadOnly="True"  Width="150"  Binding="{Binding ID}" FontSize="14"/>
+                <DataGridTextColumn Header="Тип" IsReadOnly="True"  Width="180"  Binding="{Binding Type}" FontSize="14"/>
+                <DataGridTextColumn Header="Статус" IsReadOnly="True"  Width="220"  Binding="{Binding Status}" FontSize="14"/>
+                <DataGridTextColumn Header="Имя Мастера" IsReadOnly="True"  Width="220"  Binding="{Binding Name}" FontSize="14"/>
+                <DataGridTextColumn Header="Фамилия Мастера" IsReadOnly="True"  Width="220"  Binding="{Binding Family}" FontSize="14"/>
+                <DataGridTextColumn Header="Начало" IsReadOnly="True"  Width="220"  Binding="{Binding StartData}" FontSize="14"/>
+                <DataGridTextColumn Header="Окончание" IsReadOnly="True"  Width="220"  Binding="{Binding CloseData}" FontSize="14"/>
+                <DataGridTextColumn />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
