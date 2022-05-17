@@ -50,33 +50,37 @@ namespace PCService.Pages
                     //WHERE IDAccount = 1
                     SQLiteDataReader dr = null;
                     SQLiteCommand cmd = new SQLiteCommand(query, connection);
-                    DataSet dtSet = new DataSet();
+                    // DataSet dtSet = new DataSet();
                     //var ds = new DataSet();
                     // query.Fill(ds);
-                    SQLiteDataAdapter adapter = new SQLiteDataAdapter();
-                    adapter.SelectCommand = cmd;
-                    adapter.Fill(dtSet, "PCService");
-                    var sda = new SQLiteCommand(query);
-                    var ds = new DataSet();
+                    //SQLiteDataAdapter adapter = new SQLiteDataAdapter();
+                    //adapter.SelectCommand = cmd;
+                    //adapter.Fill(dtSet, "PCService");
+                    //var sda = new SQLiteCommand(query);
+                    //var ds = new DataSet();
                     //listBox1.DataContext = dtSet;
 
-                    CategoryList.Items.Clear();
+                    //CategoryList.Items.Clear();
                     //da.Fill(ds);
-                    //dr = cmd.ExecuteReader();
+                    dr = cmd.ExecuteReader();
 
                     //PCServiceInfo.Items.Clear();
                     //PCServiceInfo.ItemsSource = dr["PCServiceInfo"].ToString();
-                    //while (dr.Read())
-                    //{
-                    //    string sLastName = dr["ID"].ToString();
-                    //    PCServiceInfo.Items.Add(sLastName);
-                    //    //string id = dr["ID"].ToString();
-                    //    //var newit = new ListBoxItem(id);
-                    //    //PCServiceInfo.Items.add(newit);
-                    //    //INSERT INTO PCService(IDTypePC, IDStatus, IDMaster, Money, StartData) VALUES('1', '1', '1', '3000', '17.05.2022');
-                    //    // PCServiceInfo.Items.Add(dr.GetValue(0).ToString());
-                    //    // PCServiceInfo.Items.Add(dr.GetString(0));
-                    //}
+                    while (dr.Read())
+                    {
+                        CategoryList.Items.Add(dr["ФИО"].ToString());
+                        //CategoryList.Items.Add(dr["id"]);
+                        //listBox1.Items.Add(dr["name"]);
+                        //listBox1.Items.Add(dr["lastname"]);
+                        //string sLastName = dr["ID"].ToString();
+                        //PCServiceInfo.Items.Add(sLastName);
+                        //string id = dr["ID"].ToString();
+                        //var newit = new ListBoxItem(id);
+                        //PCServiceInfo.Items.add(newit);
+                        //INSERT INTO PCService(IDTypePC, IDStatus, IDMaster, Money, StartData) VALUES('1', '1', '1', '3000', '17.05.2022');
+                        // PCServiceInfo.Items.Add(dr.GetValue(0).ToString());
+                        // PCServiceInfo.Items.Add(dr.GetString(0));
+                    }
                 }
             }
             catch (Exception ex)
